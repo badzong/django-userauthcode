@@ -41,6 +41,11 @@ class UserAuthCode(object):
     def is_valid(self, user, auth_code):
         salt = auth_code[:self.salt_len]
         digest = auth_code[self.salt_len:]
+ 
+        # CAVEAT: Make sure UserAuthCode cannot be used to reactivate locked
+        # profiles.
+        if user.last_login != user.date_joined:
+            return False
 
         return digest == self.digest(user, salt)
 
