@@ -3,7 +3,7 @@ django-userauthcode
 
 Generate Django user authentication codes to verify email addresses and
 activate user accounts. Unlike other solutions django-userauthcode does not
-need to store any data in your database.
+need to add additional tables or fields to your database.
 
 
 Examples:
