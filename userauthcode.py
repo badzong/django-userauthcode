@@ -4,12 +4,6 @@ import random
 import base64
 
 
-""" UserAuthCode generates an authentication code for a Django user object.
-    This code can be used to verify the user's email address and to activate
-    his account. Unlike other solutions there's no need to store any data in
-    your database. """
-    
-
 class UserAuthCode(object):
     def __init__(self, secret, salt_len=8, hash=hashlib.sha256):
         self.secret = secret
